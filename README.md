@@ -14,6 +14,10 @@
 
 To run the code, you will need to install Python 3.9, numpy, scipy and matplotlib
 
+# Organization
+
+All the codes can be found in ``main.py``. Output figures can be found in folder ``figures``. Raw data can be found in folder ``raw data``. 
+
 # Usage
 
 Below we illustrate how to reproduce the figures in our paper. Users may want to specify their own values of the problem dimension ``n``, the signal-to-noise ratio ``beta``, the number of steps ``L``, and the step size ``delta``. 
