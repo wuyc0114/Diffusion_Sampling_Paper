@@ -47,7 +47,7 @@ After running
 sim = Simulation(beta=b, n=1000, delta=0.01, L=l, N1=300, N2=1, score=True)
 sim.run_sim()
 ```
-for all ``b`` in ``{1.1, 1.2, 1.3, 1.4, 1.5}`` and all ``l`` in ``\{0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100\}``, call the following function
+for all ``b`` in ``{1.1, 1.2, 1.3, 1.4, 1.5}`` and all ``l`` in ``{0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100}``, call the following function
 
 ```
 score_plot()
