@@ -367,12 +367,26 @@ def score_plot():
 if __name__ == '__main__':
     beta = args.beta
 
-    ###------Generate Figure 1--------------------------------------------
+    ## Trajectory plot (Figure 1)
 
-    sim = Simulation(beta=beta, n=1000, delta=0.02, L=500, N1=1, N2=1, score=True)
+    sim = Simulation(n=1000, delta=0.02, L=500)
     sim.plot_trajectory()
-    #sim = Simulation(beta=beta, n=1000, delta=0.02, L=500, N1=1, N2=1, num_trajectory=1)
-    sim.run_sim()
+
+    ## Histogram (Figure 2)
+    
+    for b in [1.0, 1.1, 1.2, 1.3, 1.4, 1.5]:
+        sim = Simulation(beta=b, n=1000, delta=0.02, L=500)
+        sim.get_distribution()
+        distribution_plot(b)
+
+    ## Score function plot (Figure 3)
+
+    for b in [1.1, 1.2, 1.3, 1.4, 1.5]:
+        for l in [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
+            sim = Simulation(beta=b, n=1000, delta=0.01, L=l, N1=300, N2=1, score=True)
+            sim.run_sim()
+    
+    score_plot()
 
 
 
